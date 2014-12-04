@@ -9,11 +9,11 @@
 
 .post.unreadpost {
 	padding: 0 5px;
-	border-left: 5px solid #693;
-	border-right: 5px solid #693;
+	border-left: 5px solid #669933;
+	border-right: 5px solid #669933;
 }
 
 #unread + div.post.unreadpost  {
 	padding-top: 5px;
-	border-top: 5px solid #693;
+	border-top: 5px solid #669933;
 }

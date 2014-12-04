@@ -2,7 +2,6 @@ services:
     wolfsblvt.highlightunreadposts.listener:
         class: wolfsblvt\highlightunreadposts\event\listener
         arguments:
-            - @dbal.conn
             - @config
             - @path_helper
             - @template

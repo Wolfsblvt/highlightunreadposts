@@ -1,10 +1,10 @@
 {
 	"name": "wolfsblvt/highlightunreadposts",
 	"type": "phpbb-extension",
-	"description": "Highlights all unread posts in viewtopic.",
+	"description": "Highlights all unread posts in a topic. Color can be chosen in ACP.",
 	"homepage": "http://pinkes-forum.de/dev/find.php?ext=highlightunreadposts",
-	"version": "1.0.0",
-	"time": "2014-11-28",
+	"version": "1.0.1",
+	"time": "2014-12-04",
 	"keywords": ["phpbb", "extension", "highlightunreadposts", "viewtopic", "unread"],
 	"license": "GPL-2.0",
 	"authors": [
