@@ -3,7 +3,7 @@
  * 
  * Highlight Unread Posts [Dutch]
  * 
- * @copyright (c) 2014 Wolfsblvt ( www.pinkes-forum.de )
+ * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * Dutch translation by Dutch Translators (https://github.com/dutch-translators)
  * @author Clemens Husung (Wolfsblvt)

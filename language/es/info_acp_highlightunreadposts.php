@@ -3,7 +3,7 @@
  * 
  * Highlight Unread Posts [Spanish]
  * 
- * @copyright (c) 2014 Wolfsblvt ( www.pinkes-forum.de )
+ * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * @author Clemens Husung (Wolfsblvt)
  */
@@ -40,7 +40,7 @@ $lang = array_merge($lang, array(
 	
 	'HUP_TITLE'						=> 'Resalte Mensajes no leídos',
 	'HUP_TITLE_EXPLAIN'				=> 'Resalta todos los mensajes no leídos en un tema. El color puede ser elegido libremente.',
-	'HUP_COPYRIGHT'					=> '© 2014 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Más Extensiones de Wolfsblvt</a>]',
+	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Más Extensiones de Wolfsblvt</a>]',
 	
 	'HUP_SETTINGS'					=> 'Ajustes del resaltado de mensajes no leídos',
 	

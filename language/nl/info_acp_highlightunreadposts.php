@@ -3,7 +3,7 @@
  * 
  * Highlight Unread Posts [Dutch]
  * 
- * @copyright (c) 2014 Wolfsblvt ( www.pinkes-forum.de )
+ * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * Dutch translation by Dutch Translators (https://github.com/dutch-translators)
  * @author Clemens Husung (Wolfsblvt)
@@ -37,7 +37,7 @@ $lang = array_merge($lang, array(
 	
 	'HUP_TITLE'						=> 'Highlight Ongelezen Berichten',
 	'HUP_TITLE_EXPLAIN'				=> 'Highlights alle ongelezen berichten in een onderwerp. De kleur kan zelf worden gekozen.',
-	'HUP_COPYRIGHT'					=> '© 2014 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Meer extensies van Wolfsblvt</a>]',
+	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Meer extensies van Wolfsblvt</a>]',
 	
 	'HUP_SETTINGS'					=> 'Highlight Ongelezen Berichen instellingen',
 	

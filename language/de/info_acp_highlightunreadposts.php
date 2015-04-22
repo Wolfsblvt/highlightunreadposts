@@ -3,7 +3,7 @@
  * 
  * Highlight Unread Posts [Deutsch]
  * 
- * @copyright (c) 2014 Wolfsblvt ( www.pinkes-forum.de )
+ * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * @author Clemens Husung (Wolfsblvt)
  */
@@ -40,7 +40,7 @@ $lang = array_merge($lang, array(
 	
 	'HUP_TITLE'						=> 'Highlight Unread Posts',
 	'HUP_TITLE_EXPLAIN'				=> 'Hebt alle ungelesenen Beiträge in einem Thema hervor. Die Farbe kann frei gewählt werden.',
-	'HUP_COPYRIGHT'					=> '© 2014 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Mehr Erweiterungen von Wolfsblvt</a>]',
+	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Mehr Erweiterungen von Wolfsblvt</a>]',
 	
 	'HUP_SETTINGS'					=> 'Highlight Unread Posts Einstellungen',
 	
