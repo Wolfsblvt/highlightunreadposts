@@ -12,17 +12,15 @@ namespace wolfsblvt\highlightunreadposts\migrations;
 
 class v1_0_1_configs extends \phpbb\db\migration\migration
 {
+	static public function depends_on()
+	{
+		return array('\phpbb\db\migration\data\v31x\v313');
+	}
+
 	public function update_data()
 	{
 		return array(
 			array('config.add', array('wolfsblvt.highlightunreadposts.color',	'#669933')),
-		);
-	}
-
-	public function revert_data()
-	{
-		return array(
-			array('config.remove', array('wolfsblvt.highlightunreadposts.color')),
 		);
 	}
 }

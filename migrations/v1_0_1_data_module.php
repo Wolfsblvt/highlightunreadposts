@@ -16,7 +16,7 @@ class v1_0_1_data_module extends \phpbb\db\migration\migration
 	{
 		return array('\wolfsblvt\highlightunreadposts\migrations\v1_0_1_configs');
 	}
-	
+
 	public function update_data()
 	{
 		return array(
@@ -26,25 +26,6 @@ class v1_0_1_data_module extends \phpbb\db\migration\migration
 				'HUP_TITLE_ACP'
 			)),
 			array('module.add', array(
-				'acp',
-				'HUP_TITLE_ACP',
-				array(
-					'module_basename'	=> '\wolfsblvt\highlightunreadposts\acp\highlightunreadposts_module',
-					'modes'				=> array('settings'),
-				),
-			)),
-		);
-	}
-
-	public function revert_data()
-	{
-		return array(
-			array('module.remove', array(
-				'acp',
-				'ACP_CAT_DOT_MODS',
-				'HUP_TITLE_ACP'
-			)),
-			array('module.remove', array(
 				'acp',
 				'HUP_TITLE_ACP',
 				array(
