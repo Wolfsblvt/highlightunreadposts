@@ -47,15 +47,7 @@ class listener implements EventSubscriberInterface
 	public function __construct(\phpbb\config\config $config, \phpbb\path_helper $path_helper, \phpbb\template\template $template, \phpbb\user $user, $php_ext)
 	{
 		$this->config = $config;
-		$this->path_helper = $path_helper;
 		$this->template = $template;
-		$this->user = $user;
-		$this->php_ext = $php_ext;
-
-		$this->ext_root_path = 'ext/wolfsblvt/highlightunreadposts';
-
-		// Add language vars
-		$this->user->add_lang_ext('wolfsblvt/highlightunreadposts', 'highlightunreadposts');
 	}
 
 	/**
@@ -82,9 +74,7 @@ class listener implements EventSubscriberInterface
 		$color = ($this->config['wolfsblvt.highlightunreadposts.color'] != '#669933') ? $this->config['wolfsblvt.highlightunreadposts.color'] : false;
 
 		$this->template->assign_vars(array(
-			'T_EXT_HIGHLIGHTUNREADPOSTS_PATH'			=> $this->path_helper->get_web_root_path() . $this->ext_root_path,
-			'T_EXT_HIGHLIGHTUNREADPOSTS_THEME_PATH'		=> $this->path_helper->get_web_root_path() . $this->ext_root_path . '/styles/' . $this->user->style['style_path'] . '/theme',
-			'HUP_COLOR'									=> $color,
+			'HUP_COLOR'			=> $color,
 		));
 	}
 }

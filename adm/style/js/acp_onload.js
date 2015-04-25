@@ -8,7 +8,9 @@
  * @author Clemens Husung (Wolfsblvt)
  */
 
-$(document).ready(function () {
+(function($) { // Avoid conflicts with other libraries
+	'use strict';
+
 	var field = $("#wolfsblvt\\.highlightunreadposts\\.color")[0];
 
 	// prevent minicolors from being cut of cause by overflow:hidden
@@ -20,4 +22,5 @@ $(document).ready(function () {
 			letterCase: 'uppercase',
 		});
 	}
-});
+
+})(jQuery); // Avoid conflicts with other libraries
