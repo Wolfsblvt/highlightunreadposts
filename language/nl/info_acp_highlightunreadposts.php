@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ *
  * Highlight Unread Posts [Dutch]
- * 
+ *
  * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * Dutch translation by Dutch Translators (https://github.com/dutch-translators)
@@ -34,13 +34,13 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'HUP_TITLE_ACP'					=> 'Highlight Ongelezen Berichten',
 	'HUP_SETTINGS_ACP'				=> 'Instellingen',
-	
+
 	'HUP_TITLE'						=> 'Highlight Ongelezen Berichten',
 	'HUP_TITLE_EXPLAIN'				=> 'Highlights alle ongelezen berichten in een onderwerp. De kleur kan zelf worden gekozen.',
 	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Meer extensies van Wolfsblvt</a>]',
-	
+
 	'HUP_SETTINGS'					=> 'Highlight Ongelezen Berichen instellingen',
-	
+
 	'HUP_COLOR'						=> 'Highlight Kleur',
 	'HUP_COLOR_EXPLAIN'				=> 'Stel de highlight kleur in. Indien ingesteld op standaard, wordt de kleur van jouw stylesheet gekozen. (Standaard: #669933)',
 ));

@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ *
  * Highlight Unread Posts [Spanish]
- * 
+ *
  * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * @author Clemens Husung (Wolfsblvt)
@@ -37,13 +37,13 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'HUP_TITLE_ACP'					=> 'Resaltado de mensajes no leídos',
 	'HUP_SETTINGS_ACP'				=> 'Ajustes',
-	
+
 	'HUP_TITLE'						=> 'Resalte Mensajes no leídos',
 	'HUP_TITLE_EXPLAIN'				=> 'Resalta todos los mensajes no leídos en un tema. El color puede ser elegido libremente.',
 	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Más Extensiones de Wolfsblvt</a>]',
-	
+
 	'HUP_SETTINGS'					=> 'Ajustes del resaltado de mensajes no leídos',
-	
+
 	'HUP_COLOR'						=> 'Color del resaltado',
 	'HUP_COLOR_EXPLAIN'				=> 'Establece el color de resaltado. Si se establece como predeterminado, el color definido en la hoja de estilo de su estilo estará cargado. (Por defecto: #669933)',
 ));

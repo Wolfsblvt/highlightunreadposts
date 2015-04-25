@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ *
  * Highlight Unread Posts
- * 
+ *
  * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * @author Clemens Husung (Wolfsblvt)
@@ -19,7 +19,7 @@ class listener implements EventSubscriberInterface
 {
 	/** @var \phpbb\config\config */
 	protected $config;
-	
+
 	/** @var \phpbb\path_helper */
 	protected $path_helper;
 
@@ -31,7 +31,7 @@ class listener implements EventSubscriberInterface
 
 	/** @var string phpEx */
 	protected $php_ext;
-	
+
 	protected $table_online_time;
 	protected $table_online_time_days;
 
@@ -51,9 +51,9 @@ class listener implements EventSubscriberInterface
 		$this->template = $template;
 		$this->user = $user;
 		$this->php_ext = $php_ext;
-		
+
 		$this->ext_root_path = 'ext/wolfsblvt/highlightunreadposts';
-		
+
 		// Add language vars
 		$this->user->add_lang_ext('wolfsblvt/highlightunreadposts', 'highlightunreadposts');
 	}
@@ -70,17 +70,17 @@ class listener implements EventSubscriberInterface
 			'core.adm_page_header'			=> 'assign_template_vars',
 		);
 	}
-	
+
 	/**
 	 * Assigns template vars
-	 * 
+	 *
 	 * @param object $event The event object
 	 * @return void
 	 */
 	public function assign_template_vars()
 	{
 		$color = ($this->config['wolfsblvt.highlightunreadposts.color'] != '#669933') ? $this->config['wolfsblvt.highlightunreadposts.color'] : false;
-		
+
 		$this->template->assign_vars(array(
 			'T_EXT_HIGHLIGHTUNREADPOSTS_PATH'			=> $this->path_helper->get_web_root_path() . $this->ext_root_path,
 			'T_EXT_HIGHLIGHTUNREADPOSTS_THEME_PATH'		=> $this->path_helper->get_web_root_path() . $this->ext_root_path . '/styles/' . $this->user->style['style_path'] . '/theme',

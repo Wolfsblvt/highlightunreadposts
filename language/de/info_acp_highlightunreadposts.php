@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ *
  * Highlight Unread Posts [Deutsch]
- * 
+ *
  * @copyright (c) 2015 Wolfsblvt ( www.pinkes-forum.de )
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  * @author Clemens Husung (Wolfsblvt)
@@ -37,13 +37,13 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'HUP_TITLE_ACP'					=> 'Highlight Unread Posts',
 	'HUP_SETTINGS_ACP'				=> 'Einstellungen',
-	
+
 	'HUP_TITLE'						=> 'Highlight Unread Posts',
 	'HUP_TITLE_EXPLAIN'				=> 'Hebt alle ungelesenen Beiträge in einem Thema hervor. Die Farbe kann frei gewählt werden.',
 	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">Mehr Erweiterungen von Wolfsblvt</a>]',
-	
+
 	'HUP_SETTINGS'					=> 'Highlight Unread Posts Einstellungen',
-	
+
 	'HUP_COLOR'						=> 'Hervorhebungsfarbe',
 	'HUP_COLOR_EXPLAIN'				=> 'Setzt die Hervorhebungsfarbe. Ist sie auf Standard gesetzt, so wird die im Stylsheet des Styles definierte Farbe geladen. (Standard: #669933)',
 ));

@@ -1,4 +1,4 @@
-﻿Current Features
+Current Features
 ****************
 	• Highlights all unread posts
 	• Color configurable in ACP
