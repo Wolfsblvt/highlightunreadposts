@@ -40,7 +40,7 @@ $lang = array_merge($lang, array(
 	
 	'HUP_TITLE'						=> 'Highlight Unread Posts',
 	'HUP_TITLE_EXPLAIN'				=> 'Highlights all unread posts in a topic. Color can be chosen freely.',
-	'HUP_COPYRIGHT'					=> '© 2014 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">More extensions of Wolfsblvt</a>]',
+	'HUP_COPYRIGHT'					=> '© 2015 Wolfsblvt (www.pinkes-forum.de) [<a href="http://pinkes-forum.de/dev/find.php">More extensions of Wolfsblvt</a>]',
 	
 	'HUP_SETTINGS'					=> 'Highlight Unread Posts Settings',
 	
