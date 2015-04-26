@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Highlights all unread posts in a topic. Color can be chosen in ACP.",
 	"homepage": "http://pinkes-forum.de/dev/find.php?ext=highlightunreadposts",
-	"version": "1.0.2",
-	"time": "2015-04-23",
+	"version": "1.0.2-RC1",
+	"time": "2015-04-26",
 	"keywords": ["phpbb", "extension", "highlightunreadposts", "viewtopic", "unread"],
 	"license": "GPL-2.0",
 	"authors": [
