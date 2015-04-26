@@ -124,7 +124,9 @@ class highlightunreadposts_module
 			{
 				$func = $special_functions[$config_name];
 				if (isset($func) && is_callable($func))
+				{
 					$func();
+				}
 
 				continue;
 			}
