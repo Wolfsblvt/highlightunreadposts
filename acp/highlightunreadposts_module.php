@@ -80,7 +80,7 @@ class highlightunreadposts_module
 			),
 		);
 
-		#region Submit
+		// I form was submitted, we check this
 		if ($submit)
 		{
 			$submit = $this->do_submit_stuff($display_vars);
@@ -91,7 +91,6 @@ class highlightunreadposts_module
 				trigger_error($this->user->lang('CONFIG_UPDATED') . adm_back_link($this->u_action), E_USER_NOTICE);
 			}
 		}
-		#endregion
 
 		$this->generate_stuff_for_cfg_template($display_vars);
 
@@ -105,15 +104,15 @@ class highlightunreadposts_module
 	 * and displays the message.
 	 * If error happens, Error is shown and config not saved. (so this method quits and returns false)
 	 *
-	 * @param array $display_vars The display vars for this acp site
-	 * @param array $special_functions Assoziative Array with config values where special functions should run on submit instead of simply save the config value. Array should contain 'config_value' => function ($this) { function code here }, or 'config_value' => null if no function should run.
+	 * @param array<string,mixed> $display_vars The display vars for this acp site
+	 * @param false|array<string,func> $special_functions Assoziative Array with config values where special functions should run on submit instead of simply save the config value. Array should contain 'config_value' => function ($this) { function code here }, or 'config_value' => null if no function should run.
 	 * @return bool Submit valid or not.
 	 */
 	protected function do_submit_stuff($display_vars, $special_functions = false)
 	{
 		$this->new_config = $this->config;
 		$cfg_array = ($this->request->is_set('config')) ? $this->request->variable('config', array('' => '')) : $this->new_config;
-		$error = isset($error) ? $error : array();
+		$error = array();
 
 		validate_config_vars($display_vars['vars'], $cfg_array, $error);
 
@@ -122,17 +121,16 @@ class highlightunreadposts_module
 			$error[] = $this->user->lang['FORM_INVALID'];
 		}
 
-		// Do not write values if there is an error
+		// Do not write values if there is one or more errors
 		if (sizeof($error))
 		{
-			$submit = false;
 			return false;
 		}
 
 		// We go through the display_vars to make sure no one is trying to set variables he/she is not allowed to...
 		foreach ($display_vars['vars'] as $config_name => $null)
 		{
-			if (!isset($cfg_array[$config_name]) || strpos($config_name, 'legend') !== false)
+			if (!isset($cfg_array[$config_name]) || substr($config_name, 0, 6) === 'legend')
 			{
 				continue;
 			}
@@ -215,8 +213,6 @@ class highlightunreadposts_module
 				'TITLE_EXPLAIN'		=> $l_explain,
 				'CONTENT'			=> $content,
 			));
-
-			//unset($display_vars['vars'][$config_key]);
 		}
 
 		$this->template->assign_vars(array(
