@@ -16,10 +16,13 @@ class highlightunreadposts_module
 	public $u_action;
 
 	/** @var \phpbb\config\config */
-	public $new_config = array();
+	public $new_config;
 
 	/** @var string form key */
 	public $form_key;
+	
+	/** @var array<string> list of errors that may have occured */
+	public $error;
 
 	/** @var string name of template */
 	public $tpl_name;
@@ -55,6 +58,7 @@ class highlightunreadposts_module
 		$this->user			= $phpbb_container->get('user');
 		$this->template		= $phpbb_container->get('template');
 		$this->request		= $phpbb_container->get('request');
+		$this->error		= array();
 	}
 
 	/**
@@ -112,17 +116,16 @@ class highlightunreadposts_module
 	{
 		$this->new_config = $this->config;
 		$cfg_array = ($this->request->is_set('config')) ? $this->request->variable('config', array('' => '')) : $this->new_config;
-		$error = array();
 
-		validate_config_vars($display_vars['vars'], $cfg_array, $error);
+		validate_config_vars($display_vars['vars'], $cfg_array, $this->error);
 
 		if (!check_form_key($this->form_key))
 		{
-			$error[] = $this->user->lang['FORM_INVALID'];
+			$this->error[] = $this->user->lang['FORM_INVALID'];
 		}
 
 		// Do not write values if there is one or more errors
-		if (sizeof($error))
+		if (sizeof($this->error))
 		{
 			return false;
 		}
@@ -166,9 +169,8 @@ class highlightunreadposts_module
 	{
 		$this->new_config = $this->config;
 		$cfg_array = ($this->request->is_set('config')) ? $this->request->variable('config', array('' => '')) : $this->new_config;
-		$error = isset($error) ? $error : array();
 
-		validate_config_vars($display_vars['vars'], $cfg_array, $error);
+		validate_config_vars($display_vars['vars'], $cfg_array, $this->error);
 
 		foreach ($display_vars['vars'] as $config_key => $vars)
 		{
@@ -216,8 +218,8 @@ class highlightunreadposts_module
 		}
 
 		$this->template->assign_vars(array(
-			'S_ERROR'			=> (sizeof($error)) ? true : false,
-			'ERROR_MSG'			=> implode('<br />', $error),
+			'S_ERROR'			=> (sizeof($this->error)) ? true : false,
+			'ERROR_MSG'			=> implode('<br />', $this->error),
 
 			'U_ACTION'			=> $this->u_action)
 		);
