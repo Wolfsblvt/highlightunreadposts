@@ -21,6 +21,12 @@ class highlightunreadposts_module
 	/** @var string form key */
 	public $form_key;
 
+	/** @var string name of template */
+	public $tpl_name;
+
+	/** @var string page title */
+	public $page_title;
+
 	/** @var \phpbb\config\config */
 	protected $config;
 
@@ -36,18 +42,30 @@ class highlightunreadposts_module
 	/** @var \phpbb\request\request */
 	protected $request;
 
-	public function main($id, $mode)
+	/**
+	 * Initialize needed service objects from container
+	 * (This is cause dependency injection is not working in modules)
+	 */
+	public function init()
 	{
 		global $phpbb_container;
 
-		// Initialization
 		$this->config		= $phpbb_container->get('config');
 		$this->db			= $phpbb_container->get('dbal.conn');
 		$this->user			= $phpbb_container->get('user');
 		$this->template		= $phpbb_container->get('template');
 		$this->request		= $phpbb_container->get('request');
+	}
 
-		$action = $this->request->variable('action', '', true);
+	/**
+	 * Main function when module is executed
+	 * @param int $id The ID of this module
+	 * @param string $mode Current Mode
+	 */
+	public function main($id, $mode)
+	{
+		$this->init();
+
 		$submit = ($this->request->is_set_post('submit')) ? true : false;
 
 		$this->form_key = 'acp_highlightunreadposts';
@@ -65,9 +83,9 @@ class highlightunreadposts_module
 		#region Submit
 		if ($submit)
 		{
-			$submit = $this->do_submit_stuff($display_vars, array());
+			$submit = $this->do_submit_stuff($display_vars);
 
-			// If the submit was valid, so still submitted
+			// If the submit was valid, we show success message
 			if ($submit)
 			{
 				trigger_error($this->user->lang('CONFIG_UPDATED') . adm_back_link($this->u_action), E_USER_NOTICE);
@@ -85,13 +103,13 @@ class highlightunreadposts_module
 	/**
 	 * Abstracted method to do the submit part of the acp. Checks values, saves them
 	 * and displays the message.
-	 * If error happens, Error is shown and config not saved. (so this method quits and returns false.
+	 * If error happens, Error is shown and config not saved. (so this method quits and returns false)
 	 *
 	 * @param array $display_vars The display vars for this acp site
 	 * @param array $special_functions Assoziative Array with config values where special functions should run on submit instead of simply save the config value. Array should contain 'config_value' => function ($this) { function code here }, or 'config_value' => null if no function should run.
 	 * @return bool Submit valid or not.
 	 */
-	protected function do_submit_stuff($display_vars, $special_functions = array())
+	protected function do_submit_stuff($display_vars, $special_functions = false)
 	{
 		$this->new_config = $this->config;
 		$cfg_array = ($this->request->is_set('config')) ? $this->request->variable('config', array('' => '')) : $this->new_config;

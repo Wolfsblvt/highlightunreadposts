@@ -3,9 +3,6 @@ services:
         class: wolfsblvt\highlightunreadposts\event\listener
         arguments:
             - @config
-            - @path_helper
             - @template
-            - @user
-            - %core.php_ext%
         tags:
             - { name: event.listener }
