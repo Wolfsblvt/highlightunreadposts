@@ -20,31 +20,16 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\config\config */
 	protected $config;
 
-	/** @var \phpbb\path_helper */
-	protected $path_helper;
-
 	/** @var \phpbb\template\template */
 	protected $template;
-
-	/** @var \phpbb\user */
-	protected $user;
-
-	/** @var string phpEx */
-	protected $php_ext;
-
-	protected $table_online_time;
-	protected $table_online_time_days;
 
 	/**
 	 * Constructor of event listener
 	 *
 	 * @param \phpbb\config\config					$config			Config
-	 * @param \phpbb\path_helper					$path_helper	phpBB path helper
 	 * @param \phpbb\template\template				$template		Template object
-	 * @param \phpbb\user							$user			User object
-	 * @param string								$php_ext		phpEx
 	 */
-	public function __construct(\phpbb\config\config $config, \phpbb\path_helper $path_helper, \phpbb\template\template $template, \phpbb\user $user, $php_ext)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template)
 	{
 		$this->config = $config;
 		$this->template = $template;
@@ -55,7 +40,7 @@ class listener implements EventSubscriberInterface
 	 *
 	 * @return array
 	 */
-	static public function getSubscribedEvents()
+	public static function getSubscribedEvents()
 	{
 		return array(
 			'core.page_header'				=> 'assign_template_vars',
@@ -69,7 +54,7 @@ class listener implements EventSubscriberInterface
 	 * @param object $event The event object
 	 * @return void
 	 */
-	public function assign_template_vars()
+	public function assign_template_vars($event)
 	{
 		$color = ($this->config['wolfsblvt.highlightunreadposts.color'] != '#669933') ? $this->config['wolfsblvt.highlightunreadposts.color'] : false;
 

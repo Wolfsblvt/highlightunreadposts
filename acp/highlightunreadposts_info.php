@@ -12,7 +12,7 @@ namespace wolfsblvt\highlightunreadposts\acp;
 
 class highlightunreadposts_info
 {
-	function module()
+	public function module()
 	{
 		return array(
 			'filename'	=> '\wolfsblvt\highlightunreadposts\acp\highlightunreadposts_module',

@@ -12,9 +12,9 @@ namespace wolfsblvt\highlightunreadposts\migrations;
 
 class v1_0_1_configs extends \phpbb\db\migration\migration
 {
-	static public function depends_on()
+	public static function depends_on()
 	{
-		return array('\phpbb\db\migration\data\v31x\v313');
+		return array('\phpbb\db\migration\data\v31x\v312');
 	}
 
 	public function update_data()
