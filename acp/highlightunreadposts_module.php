@@ -20,7 +20,7 @@ class highlightunreadposts_module
 
 	/** @var string form key */
 	public $form_key;
-	
+
 	/** @var array<string> list of errors that may have occured */
 	public $error;
 

@@ -73,7 +73,7 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 	/**
 	 * Data set for assign_template_vars
 	 *
-	 * @return array<string|mixed>[]
+	 * @return array<array<string,string|false>>
 	 */
 	public function assign_template_vars_data()
 	{
@@ -105,8 +105,8 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 	 * Test test_assign_template_vars() is testing different possible config vars
 	 * and pushing them to the template.
 	 *
-	 * @param $color
-	 * @param $expected
+	 * @param string $color
+	 * @param string|false $expected
 	 *
 	 * @dataProvider assign_template_vars_data
 	 */
