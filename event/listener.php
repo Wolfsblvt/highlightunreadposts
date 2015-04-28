@@ -43,18 +43,17 @@ class listener implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header'				=> 'assign_template_vars',
 			'core.adm_page_header'			=> 'assign_template_vars',
+			'core.page_header'				=> 'assign_template_vars',
 		);
 	}
 
 	/**
 	 * Assigns template vars
 	 *
-	 * @param object $event The event object
 	 * @return void
 	 */
-	public function assign_template_vars($event)
+	public function assign_template_vars()
 	{
 		$color = ($this->config['wolfsblvt.highlightunreadposts.color'] != '#669933') ? $this->config['wolfsblvt.highlightunreadposts.color'] : false;
 
