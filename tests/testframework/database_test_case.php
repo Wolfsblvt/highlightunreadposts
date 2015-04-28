@@ -18,7 +18,7 @@ abstract class database_test_case extends \phpbb_database_test_case
 	/** @var \phpbb\db\tools */
 	protected $db_tools;
 
-	static protected function setup_extensions()
+	protected static function setup_extensions()
 	{
 		return array('wolfsblvt/highlightunreadposts');
 	}

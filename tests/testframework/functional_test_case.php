@@ -12,7 +12,7 @@ namespace wolfsblvt\highlightunreadposts\tests\testframework;
 
 abstract class functional_test_case extends \phpbb_functional_test_case
 {
-	static protected function setup_extensions()
+	protected static function setup_extensions()
 	{
 		return array('wolfsblvt/highlightunreadposts');
 	}

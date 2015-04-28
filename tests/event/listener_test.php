@@ -61,7 +61,7 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 		// Test if events are ordered alphabetically
 		$sorted_events = $subscribed_events;
 		sort($sorted_events);
-		$this->assertEquals($sorted_events, $subscribed_events, "Events should be ordered alphabetically");
+		$this->assertEquals($sorted_events, $subscribed_events, 'Events should be ordered alphabetically');
 
 		// Test if all events are subscribed
 		$this->assertEquals(array(
@@ -73,7 +73,7 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 	/**
 	 * Data set for assign_template_vars
 	 *
-	 * @return array
+	 * @return array<string|mixed>[]
 	 */
 	public function assign_template_vars_data()
 	{
