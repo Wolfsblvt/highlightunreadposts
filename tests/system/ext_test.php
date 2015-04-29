@@ -54,7 +54,8 @@ class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 		// Get the composer.json data
 		$json = json_decode(file_get_contents(dirname(__FILE__) . '/../../composer.json'), true);
 
-		$phpbb_version = array_shift(explode(',', $json['extra']['soft-require']['phpbb/phpbb']));
+		$phpbb_version = explode(',', $json['extra']['soft-require']['phpbb/phpbb']);
+		$phpbb_version = $phpbb_version[0];
 		$php_version = $json['require']['php'];
 
 		$this->assertEquals($phpbb_version,
@@ -79,7 +80,7 @@ class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 				'greater'	=> '3.1.3',
 			),
 			'php'		=> array(
-				'lower'		=> '5.3',
+				'lower'		=> '5.2',
 				'equal'		=> '5.3.3',
 				'greater'	=> '5.4',
 			),
