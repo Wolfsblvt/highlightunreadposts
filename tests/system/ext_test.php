@@ -118,10 +118,6 @@ class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 			'version' => $phpbb_version,
 		));
 
-		// Set global PHP constant, so that this one is used in this test
-		$saved_php_version = PHP_VERSION;
-		define('PHP_VERSION', $php_version);
-
 		// Mocked container should return the config object
 		// when encountering $this->container->get('config')
 		$this->container->expects($this->any())
@@ -133,8 +129,8 @@ class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 		$ext_name = 'wolfsblvt/highlightunreadposts';
 		$ext = new \wolfsblvt\highlightunreadposts\ext($this->container, $this->extension_finder, $this->migrator, $ext_name, '');
 
-		// Set back PHP constant
-		define('PHP_VERSION', $saved_php_version);
+		// We need to replace the PHP version in that extension class
+		$this->reflector->setProperty($ext, 'php_version', $php_version);
 
 		$this->assertSame($expected, $ext->is_enableable());
 	}

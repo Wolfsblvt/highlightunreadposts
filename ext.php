@@ -18,6 +18,9 @@ class ext extends \phpbb\extension\base
 	/** @var string Require PHP 5.3.3 */
 	const PHP_MIN_VERSION = '5.3.3';
 
+	/** @var string Current PHP version number */
+	protected $php_version = PHP_VERSION;
+
 	/**
 	 * Check whether or not the extension can be enabled.
 	 * The current phpBB version should meet or exceed
@@ -30,6 +33,6 @@ class ext extends \phpbb\extension\base
 	{
 		$config = $this->container->get('config');
 		return phpbb_version_compare($config['version'], self::PHPBB_MIN_VERSION, '>=')
-			&& phpbb_version_compare(PHP_VERSION, self::PHP_MIN_VERSION, '>=');
+			&& phpbb_version_compare($this->php_version, self::PHP_MIN_VERSION, '>=');
 	}
 }

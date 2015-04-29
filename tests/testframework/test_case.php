@@ -12,4 +12,14 @@ namespace wolfsblvt\highlightunreadposts\tests\testframework;
 
 abstract class test_case extends \phpbb_test_case
 {
+	/** @var \wolfsblvt\highlightunreadposts\tests\testframework\reflector_helper */
+	public $reflector;
+
+	public function setUp()
+	{
+		parent::setUp();
+
+		// Set up our reflector helper
+		$this->reflector = new reflector_helper();
+	}
 }
