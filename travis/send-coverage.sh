@@ -21,9 +21,9 @@ then
 	wget https://scrutinizer-ci.com/ocular.phar
 	php ocular.phar code-coverage:upload --format=php-clover ../../phpBB3/build/logs/clover.xml
 
-	if [ "CODECLIMATE_REPO_TOKEN" != '0' ]
+	if [ "CODECLIMATE_REPO_TOKEN" != "0" ]
 	then
 		cd ../../phpBB3
-		../$GITREPO/vendor/bin/test-reporter
+		CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN ../$GITREPO/vendor/bin/test-reporter
 	fi
 fi
