@@ -12,10 +12,16 @@ set -x
 DB=$1
 TRAVIS_PHP_VERSION=$2
 GITREPO=$3
+CODECLIMATE_REPO_TOKEN=$4
 
 if [ "$TRAVIS_PHP_VERSION" == "5.5" -a "$DB" == "mysqli" ]
 then
 	cd ../$GITREPO
 	wget https://scrutinizer-ci.com/ocular.phar
 	php ocular.phar code-coverage:upload --format=php-clover ../../phpBB3/build/logs/clover.xml
+
+	if [ "CODECLIMATE_REPO_TOKEN" != '0' ]
+	then
+		CODECLIMATE_REPO_TOKEN="$CODECLIMATE_REPO_TOKEN" ./vendor/bin/test-reporter
+	fi
 fi
