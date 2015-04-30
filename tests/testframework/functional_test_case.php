@@ -10,7 +10,7 @@
 
 namespace wolfsblvt\highlightunreadposts\tests\testframework;
 
-abstract class functional_test_case extends \phpbb_functional_test_case
+abstract class functional_test_case extends \phpbb_functional_test_case implements \wolfsblvt\highlightunreadposts\tests\test_data_collection
 {
 	/** @var \wolfsblvt\highlightunreadposts\tests\testframework\reflector_helper */
 	public $reflector;
@@ -25,6 +25,6 @@ abstract class functional_test_case extends \phpbb_functional_test_case
 
 	protected static function setup_extensions()
 	{
-		return array('wolfsblvt/highlightunreadposts');
+		return array(self::DATA_EXT_NAME);
 	}
 }

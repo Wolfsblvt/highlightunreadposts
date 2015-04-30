@@ -10,7 +10,7 @@
 
 namespace wolfsblvt\highlightunreadposts\tests\testframework;
 
-abstract class test_case extends \phpbb_test_case
+abstract class test_case extends \phpbb_test_case implements \wolfsblvt\highlightunreadposts\tests\test_data_collection
 {
 	/** @var \wolfsblvt\highlightunreadposts\tests\testframework\reflector_helper */
 	public $reflector;

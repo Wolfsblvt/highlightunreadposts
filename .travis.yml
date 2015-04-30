@@ -29,6 +29,10 @@ matrix:
     - php: hhvm
   fast_finish: true
 
+addons:
+  code_climate:
+    repo_token: 0649f1e576536f115a20cbb68e760b0a7d7309cf10822ff854d4e31b388be7a6
+
 env:
   global:
     - EXTNAME="wolfsblvt/highlightunreadposts"
@@ -37,7 +41,6 @@ env:
     - IMAGE_ICC="0"    # Should we run icc profile sniffer on your images?
     - COVERAGE="1"     # Should we send coverage?
     - EPV="1"          # Should we run EPV (Extension Pre Validator) on your code?
-    - CODECLIMATE_REPO_TOKEN="0649f1e576536f115a20cbb68e760b0a7d7309cf10822ff854d4e31b388be7a6"
     - PHP_VERSION_FOR_COVERAGE="5.4" # Wich version should we use do to our code coverage?
     - PHPBB_BRANCH="3.1.x"
 
@@ -67,4 +70,4 @@ script:
   - sh -c "if [ '$EPV' != '0' ]; then ../$GITREPO/travis/run-epv.sh $DB $TRAVIS_PHP_VERSION $EXTNAME; fi"
 
 after_script:
-  - sh -c "if [ '$COVERAGE' != '0' ]; then ../$GITREPO/travis/send-coverage.sh $DB $TRAVIS_PHP_VERSION $GITREPO $PHP_VERSION_FOR_COVERAGE $CODECLIMATE_REPO_TOKEN; fi"
+  - sh -c "if [ '$COVERAGE' != '0' ]; then ../$GITREPO/travis/send-coverage.sh $DB $TRAVIS_PHP_VERSION $GITREPO $PHP_VERSION_FOR_COVERAGE; fi"

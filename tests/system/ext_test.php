@@ -126,8 +126,7 @@ class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 			->will($this->returnValue($config));
 
 		/** @var \wolfsblvt\highlightunreadposts\ext */
-		$ext_name = 'wolfsblvt/highlightunreadposts';
-		$ext = new \wolfsblvt\highlightunreadposts\ext($this->container, $this->extension_finder, $this->migrator, $ext_name, '');
+		$ext = new \wolfsblvt\highlightunreadposts\ext($this->container, $this->extension_finder, $this->migrator, self::DATA_EXT_NAME, '');
 
 		// We need to replace the PHP version in that extension class
 		$this->reflector->setProperty($ext, 'php_version', $php_version);
