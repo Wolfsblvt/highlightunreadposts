@@ -23,6 +23,7 @@ then
 
 	if [ "CODECLIMATE_REPO_TOKEN" != '0' ]
 	then
-		CODECLIMATE_REPO_TOKEN="$CODECLIMATE_REPO_TOKEN" ./vendor/bin/test-reporter
+		cd ../../phpBB3
+		CODECLIMATE_REPO_TOKEN="$CODECLIMATE_REPO_TOKEN" ./ext/$GITREPO/vendor/bin/test-reporter
 	fi
 fi
