@@ -24,6 +24,6 @@ then
 	if [ "CODECLIMATE_REPO_TOKEN" != '0' ]
 	then
 		cd ../../phpBB3
-		CODECLIMATE_REPO_TOKEN="$CODECLIMATE_REPO_TOKEN" ./ext/$GITREPO/vendor/bin/test-reporter
+		CODECLIMATE_REPO_TOKEN="$CODECLIMATE_REPO_TOKEN" ../$GITREPO/vendor/bin/test-reporter
 	fi
 fi
