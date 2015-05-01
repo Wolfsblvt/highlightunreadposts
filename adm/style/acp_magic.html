@@ -1,18 +1,15 @@
-<!-- IF not $INCLUDED_ABEAUTIFULSITE -->
-	<!-- INCLUDEJS @wolfsblvt_highlightunreadposts/lib/abeautifulsite/jquery-minicolors/jquery.minicolors.min.js -->
-	<!-- INCLUDECSS @wolfsblvt_highlightunreadposts/lib/abeautifulsite/jquery-minicolors/jquery.minicolors.css -->
-	<!-- DEFINE $INCLUDED_ABEAUTIFULSITE = true -->
-<!-- ENDIF -->
-<!-- INCLUDEJS @wolfsblvt_highlightunreadposts/js/acp_onload.js -->
-
 <!-- INCLUDE overall_header.html -->
 
 <a id="maincontent"></a>
 
-<h1>{L_HUP_TITLE}</h1>
+<!-- EVENT wolfsblvt_acpmagic_title_before -->
 
-<p>{L_HUP_TITLE_EXPLAIN}</p>
-<p style="font-style:italic; font-size:80%;">{L_HUP_COPYRIGHT}</p>
+<h1>{L_TITLE}</h1>
+
+<p>{L_TITLE_EXPLAIN}</p>
+<p style="font-style:italic; font-size:80%;">{L_COPYRIGHT}</p>
+
+<!-- EVENT wolfsblvt_acpmagic_title_after -->
 
 <!-- IF S_ERROR -->
 	<div class="errorbox">
@@ -20,6 +17,8 @@
 		<p>{ERROR_MSG}</p>
 	</div>
 <!-- ENDIF -->
+
+<!-- EVENT wolfsblvt_acpmagic_content_before -->
 
 <form id="acp_primebantogroup" method="post" action="{U_ACTION}">
 
@@ -49,5 +48,7 @@
 	{S_FORM_TOKEN}
 </fieldset>
 </form>
+
+<!-- EVENT wolfsblvt_acpmagic_content_after -->
 
 <!-- INCLUDE overall_footer.html -->

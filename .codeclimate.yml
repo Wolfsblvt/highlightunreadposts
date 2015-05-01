@@ -1,4 +1,8 @@
+languages:
+   JavaScript: true
+   PHP: true
 # Ignore files that are not relevant for the check
+
 exclude_paths:
     - build/*
     - tests/*
@@ -6,12 +10,3 @@ exclude_paths:
     - lib/*
     - adm/style/lib/*
     - style/all/lib/*
-
-# We need those disabled rules, sadly. phpBB is still oldschool here
-rules:
-    php.psr1:
-        enabled: false
-    php.interface_has_no_interface_suffix:
-        enabled: false
-    doctrine.database_query_contains_string_and_variable_concatenation:
-        enabled: false
