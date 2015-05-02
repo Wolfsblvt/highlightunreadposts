@@ -16,7 +16,7 @@
 	// prevent minicolors from being cut of cause by overflow:hidden
 	$(".row, fieldset dl").css("overflow", "visible");
 
-	if (field != undefined) {
+	if (field !== undefined) {
 		$(field).minicolors({
 			position: 'top left',
 			letterCase: 'uppercase',

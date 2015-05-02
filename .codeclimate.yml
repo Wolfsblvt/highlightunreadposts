@@ -10,3 +10,4 @@ exclude_paths:
     - lib/*
     - adm/style/lib/*
     - style/all/lib/*
+    - language/*
