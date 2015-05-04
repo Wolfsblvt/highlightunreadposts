@@ -16,6 +16,28 @@ use wolfsblvt\highlightunreadposts as wolfsblvt_cur_ext;
 class acp_module_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 {
 	/**
+	 * Tests the initialization of acpmagic vendor extensio
+	 */
+	public function test_include_of_acpmagic()
+	{
+		// Set up the module object
+		$module = new \wolfsblvt\highlightunreadposts\acp\highlightunreadposts_module();
+
+		
+
+		// We need to overwrite global container object here :-/
+		global $phpbb_container;
+		$phpbb_container = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
+			->getMock()
+			->expects($this->once())
+			->method('get')
+			->with('wolfsblvt.acpmagic.controller')
+			->willReturn($this->any());
+
+		$module->init();
+	}
+
+	/**
 	 * Tests the constants for minimum version with the ones specified in the composer.json,
 	 * they have to be the same.
 	 */
