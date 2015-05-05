@@ -10,10 +10,7 @@
 
 namespace wolfsblvt\highlightunreadposts\tests\event;
 
-// Makes our extension namespace easier usable
-use wolfsblvt\highlightunreadposts as wolfsblvt_cur_ext;
-
-class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
+class listener_test extends \wolfsblvt\highlightunreadposts\tests\testframework\test_case
 {
 	/** @var \phpbb\config\config */
 	protected $config;
@@ -25,7 +22,7 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 	protected $template;
 
 	/**
-	 * Setup test environment
+	 * {@inheritdoc}
 	 */
 	public function setUp()
 	{
@@ -37,7 +34,7 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 			->getMock();
 
 		// Create our event listener
-		$this->listener = new wolfsblvt_cur_ext\event\listener(
+		$this->listener = new \wolfsblvt\highlightunreadposts\event\listener(
 			$this->config,
 			$this->template
 		);
@@ -56,7 +53,7 @@ class listener_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 	 */
 	public function test_getSubscribedEvents()
 	{
-		$subscribed_events = array_keys(wolfsblvt_cur_ext\event\listener::getSubscribedEvents());
+		$subscribed_events = array_keys(\wolfsblvt\highlightunreadposts\event\listener::getSubscribedEvents());
 
 		// Test if events are ordered alphabetically
 		$sorted_events = $subscribed_events;

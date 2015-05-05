@@ -8,26 +8,35 @@
  * @author Clemens Husung (Wolfsblvt)
  */
 
-namespace phpbb\collapsiblecategories\tests\system;
+namespace wolfsblvt\highlightunreadposts\tests\system;
 
-// Makes our extension namespace easier usable
-use wolfsblvt\highlightunreadposts as wolfsblvt_cur_ext;
-
-class info_test extends wolfsblvt_cur_ext\tests\testframework\test_case
+class acp_info_test extends \wolfsblvt\highlightunreadposts\tests\testframework\test_case
 {
+	/** @var \wolfsblvt\highlightunreadposts\acp\highlightunreadposts_info */
+	protected $info;
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function setUp()
+	{
+		parent::setUp();
+
+		// Set up the info object
+		$this->info = new \wolfsblvt\highlightunreadposts\acp\highlightunreadposts_info();
+	}
+
 	/**
 	 * Tests the constants for minimum version with the ones specified in the composer.json,
 	 * they have to be the same.
 	 */
 	public function test_highlightunreadposts_info()
 	{
-		// Set up the info object
-		$info = new \wolfsblvt\highlightunreadposts\acp\highlightunreadposts_info();
-		$data = $info->module();
+		$data = $this->info->module();
 
 		// Test is function module() exists
 		$this->assertTrue(
-			method_exists($info, 'module'),
+			method_exists($this->info, 'module'),
 			'Class does not have method module()'
 		);
 

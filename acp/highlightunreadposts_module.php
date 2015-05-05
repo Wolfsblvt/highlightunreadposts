@@ -19,7 +19,7 @@ class highlightunreadposts_module
 	public $page_title;
 
 	/** @var \wolfsblvt\acpmagic\acp_magic_controller */
-	public $acp_magic;
+	protected $acp_magic;
 
 	/**
 	 * Initialize needed service objects from container

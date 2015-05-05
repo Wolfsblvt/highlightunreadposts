@@ -15,6 +15,9 @@ abstract class functional_test_case extends \phpbb_functional_test_case implemen
 	/** @var \wolfsblvt\highlightunreadposts\tests\testframework\reflector_helper */
 	public $reflector;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function setUp()
 	{
 		parent::setUp();
@@ -23,6 +26,9 @@ abstract class functional_test_case extends \phpbb_functional_test_case implemen
 		$this->reflector = new reflector_helper();
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	protected static function setup_extensions()
 	{
 		return array(self::DATA_EXT_NAME);

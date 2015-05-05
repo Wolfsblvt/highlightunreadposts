@@ -8,14 +8,11 @@
  * @author Clemens Husung (Wolfsblvt)
  */
 
-namespace phpbb\collapsiblecategories\tests\system;
-
-// Makes our extension namespace easier usable
-use wolfsblvt\highlightunreadposts as wolfsblvt_cur_ext;
+namespace wolfsblvt\highlightunreadposts\tests\system;
 
 require_once dirname(__FILE__) . '/../../../../../includes/functions.php';
 
-class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
+class ext_test extends \wolfsblvt\highlightunreadposts\tests\testframework\test_case
 {
 	/** @var \PHPUnit_Framework_MockObject_MockObject */
 	protected $container;
@@ -26,6 +23,9 @@ class ext_test extends wolfsblvt_cur_ext\tests\testframework\test_case
 	/** @var \PHPUnit_Framework_MockObject_MockObject */
 	protected $migrator;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function setUp()
 	{
 		parent::setUp();

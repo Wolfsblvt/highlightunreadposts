@@ -15,6 +15,9 @@ abstract class test_case extends \phpbb_test_case implements \wolfsblvt\highligh
 	/** @var \wolfsblvt\highlightunreadposts\tests\testframework\reflector_helper */
 	public $reflector;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function setUp()
 	{
 		parent::setUp();

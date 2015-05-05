@@ -21,11 +21,17 @@ abstract class database_test_case extends \phpbb_database_test_case implements \
 	/** @var \phpbb\db\tools */
 	protected $db_tools;
 
+	/**
+	 * {@inheritdoc}
+	 */
 	protected static function setup_extensions()
 	{
 		return array(self::DATA_EXT_NAME);
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function setUp()
 	{
 		parent::setUp();
